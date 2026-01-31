@@ -21,12 +21,12 @@ setup_design_e2e_test() {
     cd "$repo_root" || exit 1
     
     # Template selection: simple or comprehensive
-    # Default to comprehensive, but can be overridden
-    local template_type="comprehensive"  # Options: simple, comprehensive
+    # Default to simple, but can be overridden
+    local template_type="simple"  # Options: simple, comprehensive
     
-    # Check if --simple flag is passed
-    if [[ "$1" == "--simple" ]]; then
-        template_type="simple"
+    # Check if --comprehensive flag is passed
+    if [[ "$1" == "--comprehensive" ]]; then
+        template_type="comprehensive"
     fi
     
     # Define paths

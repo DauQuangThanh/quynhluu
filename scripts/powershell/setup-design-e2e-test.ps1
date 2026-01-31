@@ -13,7 +13,7 @@ $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 # Main setup function
 function Setup-DesignE2ETest {
     param(
-        [switch]$Simple
+        [switch]$Comprehensive
     )
     
     $repoRoot = Get-RepoRoot
@@ -22,8 +22,8 @@ function Setup-DesignE2ETest {
     Set-Location $repoRoot
     
     # Template selection: simple or comprehensive
-    # Default to comprehensive
-    $templateType = if ($Simple) { "simple" } else { "comprehensive" }
+    # Default to simple
+    $templateType = if ($Comprehensive) { "comprehensive" } else { "simple" }
     
     # Define paths
     $docsDir = Join-Path $repoRoot "docs"

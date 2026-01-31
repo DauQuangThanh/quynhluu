@@ -35,7 +35,7 @@ You **MUST** consider the user input before proceeding (if not empty).
    - **Simple Template** (`e2e-test-simple.md`): For small to medium projects with 3-10 critical user journeys, 1-5 QA engineers, standard web/mobile apps with moderate complexity
    - **Comprehensive Template** (`e2e-test-comprehensive.md`): For enterprise projects with complex requirements, large teams, extensive integrations, multiple environments, and strict compliance needs
    - User can override with `$ARGUMENTS` by specifying "use simple template" or "use comprehensive template"
-   - Default: Comprehensive template (safest for unknown requirements)
+   - Default: Simple template (suitable for most projects; can upgrade later if needed)
    - The TEMPLATE_TYPE field in JSON indicates which template was selected
 
 3. **Load context**: Read `docs/ground-rules.md`, `docs/architecture.md`, `docs/standards.md` (if exists), and all feature specifications from `specs/*/spec.md`. Load E2E_TEST_DOC template (already copied to docs/). Adhere to the principles for maximizing test case clarity, simplicity, and long-term execution maintainability.

@@ -85,30 +85,30 @@ Use this decision matrix:
 
 ## Usage
 
-The `/quynhluu.design-e2e-test` command automatically selects the appropriate template based on project context. By default, it uses the **comprehensive template** (safest for unknown requirements).
+The `/quynhluu.design-e2e-test` command automatically selects the appropriate template based on project context. By default, it uses the **simple template** (suitable for most projects, with easy upgrade path to comprehensive).
 
 ### Override Template Selection
 
 You can explicitly request a specific template:
 
 ```bash
-# Request simple template
-/quynhluu.design-e2e-test use simple template
-
-# Request comprehensive template
+# Request comprehensive template (default is simple)
 /quynhluu.design-e2e-test use comprehensive template
+
+# Explicitly request simple template (default, but can be explicit)
+/quynhluu.design-e2e-test use simple template
 ```
 
 ### Script-Level Override
 
-For automation, you can pass the `--simple` flag to the setup script:
+For automation, you can pass the `--comprehensive` flag to the setup script:
 
 ```bash
 # Bash
-scripts/bash/setup-design-e2e-test.sh --simple
+scripts/bash/setup-design-e2e-test.sh --comprehensive
 
 # PowerShell
-scripts/powershell/setup-design-e2e-test.ps1 -Simple
+scripts/powershell/setup-design-e2e-test.ps1 -Comprehensive
 ```
 
 ## When to Switch Templates
@@ -182,7 +182,7 @@ When Quynhluu is updated, both templates are refreshed with latest best practice
 
 ## Best Practices
 
-1. **Default to comprehensive** unless you're certain simple suffices
+1. **Start with simple** for most projects; upgrade to comprehensive when needed
 2. **Review quarterly** to determine if template still fits
 3. **Mix and match** sections as needed (templates are guidelines)
 4. **Document deviations** if you customize templates
@@ -193,13 +193,15 @@ When Quynhluu is updated, both templates are refreshed with latest best practice
 If unsure which template to use, ask yourself:
 - "Could a test failure cause financial loss or harm?"
   - **Yes**: Comprehensive
-  - **No**: Simple
+  - **No**: Simple (default)
 - "Do we need extensive audit trails for compliance?"
   - **Yes**: Comprehensive
-  - **No**: Simple
+  - **No**: Simple (default)
 - "Is this a short-term MVP or long-term product?"
-  - **MVP**: Simple
-  - **Long-term**: Comprehensive
+  - **MVP**: Simple (default)
+  - **Long-term**: Start simple, upgrade when complexity warrants
+
+**When in doubt, start with simple.** You can always upgrade to comprehensive later when your project grows or requirements become more complex.
 
 ## Further Reading
 

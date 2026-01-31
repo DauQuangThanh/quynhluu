@@ -230,7 +230,7 @@ The `--no-git` flag skips git initialization but doesn't affect file updates.
 
 ## Using `--no-git` Flag
 
-The `--no-git` flag tells Hanoi Quynhluu to **skip git repository initialization**. This is useful when:
+The `--no-git` flag tells Quynhluu to **skip git repository initialization**. This is useful when:
 
 - You manage version control differently (Mercurial, SVN, etc.)
 - Your project is part of a larger monorepo with existing git setup
@@ -270,9 +270,9 @@ export SPECIFY_FEATURE="001-my-feature"
 $env:SPECIFY_FEATURE = "001-my-feature"
 ```
 
-This tells Hanoi Quynhluu which feature directory to use when creating specs, plans, and tasks.
+This tells Quynhluu which feature directory to use when creating specs, plans, and tasks.
 
-**Why this matters:** Without git, Hanoi Quynhluu can't detect your current branch name to determine the active feature. The environment variable provides that context manually.
+**Why this matters:** Without git, Quynhluu can't detect your current branch name to determine the active feature. The environment variable provides that context manually.
 
 ---
 
@@ -327,11 +327,11 @@ This warning appears when you run `quynhluu init --here` (or `quynhluu init .`) 
 
 1. **The directory has existing content** - In the example, 25 files/folders
 2. **Files will be merged** - New template files will be added alongside your existing files
-3. **Some files may be overwritten** - If you already have Hanoi Quynhluu files (`.claude/`, `.quynhluu/`, etc.), they'll be replaced with the new versions
+3. **Some files may be overwritten** - If you already have Quynhluu files (`.claude/`, `.quynhluu/`, etc.), they'll be replaced with the new versions
 
 **What gets overwritten:**
 
-Only Hanoi Quynhluu infrastructure files:
+Only Quynhluu infrastructure files:
 
 - Agent command files (`.claude/commands/`, `.github/prompts/`, etc.)
 - Scripts in `.quynhluu/scripts/`
@@ -343,7 +343,7 @@ Only Hanoi Quynhluu infrastructure files:
 - Your `specs/` directory (specifications, plans, tasks)
 - Your source code files
 - Your `.git/` directory and git history
-- Any other files not part of Hanoi Quynhluu templates
+- Any other files not part of Quynhluu templates
 
 **How to respond:**
 
@@ -357,8 +357,8 @@ Only Hanoi Quynhluu infrastructure files:
 
 **When you see this warning:**
 
-- ✅ **Expected** when upgrading an existing Hanoi Quynhluu project
-- ✅ **Expected** when adding Hanoi Quynhluu to an existing codebase
+- ✅ **Expected** when upgrading an existing Quynhluu project
+- ✅ **Expected** when adding Quynhluu to an existing codebase
 - ⚠️ **Unexpected** if you thought you were creating a new project in an empty directory
 
 **Prevention tip:** Before upgrading, commit or back up your `docs/ground-rules.md` if you customized it.
@@ -394,7 +394,7 @@ uv tool install quynhluu-cli --from git+https://github.com/dauquangthanh/hanoi-q
 
 The `quynhluu` CLI tool is used for:
 
-- **Initial setup:** `quynhluu init` to bootstrap Hanoi Quynhluu in your project
+- **Initial setup:** `quynhluu init` to bootstrap Quynhluu in your project
 - **Upgrades:** `quynhluu init --here --force` to update templates and commands
 - **Diagnostics:** `quynhluu check` to verify tool installation
 
@@ -428,7 +428,7 @@ Once you've run `quynhluu init`, the slash commands (like `/quynhluu.specify`, `
 
 ## Version Compatibility
 
-Hanoi Quynhluu follows semantic versioning for major releases. The CLI and project files are designed to be compatible within the same major version.
+Quynhluu follows semantic versioning for major releases. The CLI and project files are designed to be compatible within the same major version.
 
 **Best practice:** Keep both CLI and project files in sync by upgrading both together during major version changes.
 

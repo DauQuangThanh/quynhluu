@@ -42,7 +42,7 @@ env/
 .env.local
 *.lock
 
-# Hanoi Quynhluu-specific files
+# Quynhluu-specific files
 .genreleases/
 *.zip
 sdd-*/

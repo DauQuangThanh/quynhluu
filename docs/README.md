@@ -1,6 +1,6 @@
 # 📚 Documentation
 
-This folder contains the documentation source files for Hanoi Quynhluu, built with [DocFX](https://dotnet.github.io/docfx/).
+This folder contains the documentation source files for Quynhluu, built with [DocFX](https://dotnet.github.io/docfx/).
 
 ---
 

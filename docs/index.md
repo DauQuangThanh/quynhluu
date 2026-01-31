@@ -96,7 +96,7 @@ Our experiments focus on making Spec-Driven Development work for real teams:
 
 ## 🤝 Contributing
 
-Want to help improve Hanoi Quynhluu? Check our [Contributing Guide](https://github.com/dauquangthanh/hanoi-quynhluu/blob/main/CONTRIBUTING.md) to get started.
+Want to help improve Quynhluu? Check our [Contributing Guide](https://github.com/dauquangthanh/hanoi-quynhluu/blob/main/CONTRIBUTING.md) to get started.
 
 **Ways to contribute:**
 

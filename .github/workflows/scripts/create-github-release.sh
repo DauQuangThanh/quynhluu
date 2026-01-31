@@ -54,5 +54,5 @@ gh release create "$VERSION" \
   .genreleases/quynhluu-template-qoder-ps-"$VERSION".zip \
   .genreleases/quynhluu-template-antigravity-sh-"$VERSION".zip \
   .genreleases/quynhluu-template-antigravity-ps-"$VERSION".zip \
-  --title "Hanoi Quynhluu - $VERSION_NO_V" \
+  --title "Quynhluu - $VERSION_NO_V" \
   --notes-file release_notes.md

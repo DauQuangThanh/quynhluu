@@ -28,7 +28,7 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
-	8080 // for Hanoi Quynhluu documentation site
+	8080 // for Quynhluu documentation site
   ],
   "containerUser": "devcontainer",
   "updateRemoteUserUID": true,

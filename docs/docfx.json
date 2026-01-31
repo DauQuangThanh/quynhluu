@@ -56,9 +56,9 @@
     "cleanupCacheHistory": false,
     "disableGitFeatures": false,
     "globalMetadata": {
-      "_appTitle": "Hanoi Quynhluu Documentation",
-      "_appName": "Hanoi Quynhluu",
-      "_appFooter": "Hanoi Quynhluu - A specification-driven development toolkit",
+      "_appTitle": "Quynhluu Documentation",
+      "_appName": "Quynhluu",
+      "_appFooter": "Quynhluu - A specification-driven development toolkit",
       "_enableSearch": true,
       "_disableContribution": false,
       "_gitContribute": {

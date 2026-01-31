@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌅 Quynhluu
+# 🌅 Quynhluu - Quỳnh Lưu Xứ Nghệ
 
 ## *Drive Quality Together with AI-Powered Framework*
 
@@ -106,7 +106,7 @@ quynhluu check
 ```
 
 <p align="center">
-  <img src="./media/quynhluu.png" alt="Hanoi Quynhluu Installation" width="100%"/>
+  <img src="./media/quynhluu.png" alt="Quynhluu Installation" width="100%"/>
 </p>
 
 **Need to upgrade?** See the [Upgrade Guide](./docs/upgrade.md) or run:
@@ -377,7 +377,7 @@ Spec-Driven Development is built on these core principles:
 
 ## 🌟 When to Use Spec-Driven Development
 
-Hanoi Quynhluu supports three main development scenarios with different workflows:
+Quynhluu supports three main development scenarios with different workflows:
 
 ### Development Workflows Overview
 

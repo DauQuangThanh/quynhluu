@@ -29,20 +29,30 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 **IMPORTANT**: Automatically generate a 'test:' prefixed git commit message (e.g., 'test: add E2E test plan and specifications') and commit upon completion.
 
-1. **Setup**: Run `{SCRIPT}` from repo root and parse JSON for E2E_TEST_DOC, DOCS_DIR, ARCH_DOC, SPECS_DIR. For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
+1. **Setup**: Run `{SCRIPT}` from repo root and parse JSON for E2E_TEST_DOC, DOCS_DIR, ARCH_DOC, SPECS_DIR, TEMPLATE_TYPE. For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
 
-2. **Load context**: Read `docs/ground-rules.md`, `docs/architecture.md`, `docs/standards.md` (if exists), and all feature specifications from `specs/*/spec.md`. Load E2E_TEST_DOC template (already copied to docs/). Adhere to the principles for maximizing test case clarity, simplicity, and long-term execution maintainability.
+2. **Template Selection**: The setup script automatically selects the appropriate template:
+   - **Simple Template** (`e2e-test-simple.md`): For small to medium projects with 3-10 critical user journeys, 1-5 QA engineers, standard web/mobile apps with moderate complexity
+   - **Comprehensive Template** (`e2e-test-comprehensive.md`): For enterprise projects with complex requirements, large teams, extensive integrations, multiple environments, and strict compliance needs
+   - User can override with `$ARGUMENTS` by specifying "use simple template" or "use comprehensive template"
+   - Default: Comprehensive template (safest for unknown requirements)
+   - The TEMPLATE_TYPE field in JSON indicates which template was selected
 
-3. **Execute E2E test design workflow**: Follow the structure in E2E_TEST_DOC template to:
-   - Define E2E test strategy and scope
+3. **Load context**: Read `docs/ground-rules.md`, `docs/architecture.md`, `docs/standards.md` (if exists), and all feature specifications from `specs/*/spec.md`. Load E2E_TEST_DOC template (already copied to docs/). Adhere to the principles for maximizing test case clarity, simplicity, and long-term execution maintainability.
+
+4. **Execute E2E test design workflow**: Follow the structure in E2E_TEST_DOC template to:
+   - Note which template was used (simple vs comprehensive) from TEMPLATE_TYPE
+   - For **simple template**: Focus on 3-5 critical journeys, essential test scenarios, and streamlined execution plan
+   - For **comprehensive template**: Include full stakeholder analysis, detailed test pyramid, extensive scenario catalog, and enterprise-grade reporting
+   - Define E2E test strategy and scope appropriate to template level
    - Identify critical user journeys from feature specs
    - Design test scenarios covering system integration points
    - Define test data management strategy
-   - Quynhluu test environment requirements
+   - Specify test environment requirements
    - Document test automation framework and tools
    - Create test execution plan
 
-4. **Stop and report**: Command ends after E2E test document completion. Report E2E_TEST_DOC path and generated artifacts.
+5. **Stop and report**: Command ends after E2E test document completion. Report E2E_TEST_DOC path, template type used, and generated artifacts.
 
 ## Phases
 

@@ -12,15 +12,23 @@ $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 # Main setup function
 function Setup-DesignE2ETest {
+    param(
+        [switch]$Simple
+    )
+    
     $repoRoot = Get-RepoRoot
     
     # Navigate to repository root
     Set-Location $repoRoot
     
+    # Template selection: simple or comprehensive
+    # Default to comprehensive
+    $templateType = if ($Simple) { "simple" } else { "comprehensive" }
+    
     # Define paths
     $docsDir = Join-Path $repoRoot "docs"
     $e2eTestFile = Join-Path $docsDir "e2e-test-plan.md"
-    $templateFile = Join-Path $repoRoot ".quynhluu" "templates" "templates-for-commands" "e2e-test-template.md"
+    $templateFile = Join-Path $repoRoot ".quynhluu" "templates" "templates-for-commands" "e2e-test-$templateType.md"
     $groundRulesFile = Join-Path $repoRoot ".quynhluu" "memory" "ground-rules.md"
     $architectureFile = Join-Path $docsDir "architecture.md"
     $specsDir = Join-Path $repoRoot "specs"
@@ -76,7 +84,7 @@ function Setup-DesignE2ETest {
     $detectedAgent = Detect-AllAIAgents -RepoRoot $repoRoot
     
     # Generate JSON output for AI agents
-    New-JsonOutput -E2ETestFile $e2eTestFile -FeatureCount $featureCount -AIAgent $detectedAgent -IntegrationInfo $integrationInfo
+    New-JsonOutput -E2ETestFile $e2eTestFile -TemplateType $templateType -FeatureCount $featureCount -AIAgent $detectedAgent -IntegrationInfo $integrationInfo
     
     # Print human-readable summary
     Show-Summary -E2ETestFile $e2eTestFile -FeatureCount $featureCount -IntegrationInfo $integrationInfo
@@ -119,6 +127,7 @@ function Get-IntegrationPoints {
 function New-JsonOutput {
     param (
         [string]$E2ETestFile,
+        [string]$TemplateType,
         [int]$FeatureCount,
         [string]$AIAgent,
         [string]$IntegrationInfo
@@ -128,6 +137,7 @@ function New-JsonOutput {
         command = "design-e2e-test"
         status = "ready"
         e2e_test_document = $E2ETestFile
+        template_type = $TemplateType
         feature_count = $FeatureCount
         detected_ai_agent = $AIAgent
         integration_analysis = $IntegrationInfo

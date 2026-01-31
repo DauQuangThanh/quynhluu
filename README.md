@@ -106,7 +106,7 @@ quynhluu check
 ```
 
 <p align="center">
-  <img src="./media/hanoi-quynhluu.png" alt="Hanoi Quynhluu Installation" width="100%"/>
+  <img src="./media/quynhluu.png" alt="Hanoi Quynhluu Installation" width="100%"/>
 </p>
 
 **Need to upgrade?** See the [Upgrade Guide](./docs/upgrade.md) or run:

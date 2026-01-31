@@ -20,10 +20,19 @@ setup_design_e2e_test() {
     # Navigate to repository root
     cd "$repo_root" || exit 1
     
+    # Template selection: simple or comprehensive
+    # Default to comprehensive, but can be overridden
+    local template_type="comprehensive"  # Options: simple, comprehensive
+    
+    # Check if --simple flag is passed
+    if [[ "$1" == "--simple" ]]; then
+        template_type="simple"
+    fi
+    
     # Define paths
     local docs_dir="$repo_root/docs"
     local e2e_test_file="$docs_dir/e2e-test-plan.md"
-    local template_file="$repo_root/.quynhluu/templates/templates-for-commands/e2e-test-template.md"
+    local template_file="$repo_root/.quynhluu/templates/templates-for-commands/e2e-test-${template_type}.md"
     local ground_rules_file="$repo_root/docs/ground-rules.md"
     local architecture_file="$docs_dir/architecture.md"
     local specs_dir="$repo_root/specs"
@@ -77,7 +86,7 @@ setup_design_e2e_test() {
     detected_agent=$(detect_all_ai_agents "$repo_root")
     
     # Generate JSON output for AI agents
-    generate_json_output "$e2e_test_file" "$feature_count" "$detected_agent" "$integration_info"
+    generate_json_output "$e2e_test_file" "$template_type" "$feature_count" "$detected_agent" "$integration_info"
     
     # Print human-readable summary
     print_summary "$e2e_test_file" "$feature_count" "$integration_info"
@@ -115,15 +124,17 @@ extract_integration_points() {
 # Generate JSON output for AI agent consumption
 generate_json_output() {
     local e2e_test_file="$1"
-    local feature_count="$2"
-    local ai_agent="$3"
-    local integration_info="$4"
+    local template_type="$2"
+    local feature_count="$3"
+    local ai_agent="$4"
+    local integration_info="$5"
     
     cat <<EOF
 {
   "command": "design-e2e-test",
   "status": "ready",
   "e2e_test_document": "$e2e_test_file",
+  "template_type": "$template_type",
   "feature_count": $feature_count,
   "detected_ai_agent": "$ai_agent",
   "integration_analysis": "$integration_info",

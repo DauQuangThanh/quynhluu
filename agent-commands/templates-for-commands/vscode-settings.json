@@ -1,0 +1,15 @@
+{
+    "chat.promptFilesRecommendations": {
+        "quynhluu.set-ground-rules": true,
+        "quynhluu.specify": true,
+        "quynhluu.architect": true,
+        "quynhluu.design": true,
+        "quynhluu.taskify": true,
+        "quynhluu.implement": true
+    },
+    "chat.tools.terminal.autoApprove": {
+        ".quynhluu/scripts/bash/": true,
+        ".quynhluu/scripts/powershell/": true
+    }
+}
+

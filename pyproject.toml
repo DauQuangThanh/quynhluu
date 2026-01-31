@@ -1,0 +1,24 @@
+[project]
+name = "quynhluu-cli"
+version = "0.2.1"
+description = "Quynhluu CLI - A framework to develop your project with Spec-Driven Development (SDD)."
+requires-python = ">=3.11"
+dependencies = [
+    "typer",
+    "rich",
+    "httpx[socks]",
+    "platformdirs",
+    "readchar",
+    "truststore>=0.10.4",
+]
+
+[project.scripts]
+quynhluu = "quynhluu_cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/quynhluu_cli"]
+

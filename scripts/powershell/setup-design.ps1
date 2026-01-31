@@ -31,7 +31,7 @@ if (-not (Test-FeatureBranch -Branch $paths.CURRENT_BRANCH -HasGit $paths.HAS_GI
 # Ensure the feature directory exists
 New-Item -ItemType Directory -Path $paths.FEATURE_DIR -Force | Out-Null
 
-# Copy plan template if it exists, otherwise note it or create empty file
+# Copy design template if it exists, otherwise note it or create empty file
 $template = Join-Path $paths.REPO_ROOT '.quynhluu/templates/templates-for-commands/design-template.md'
 if (Test-Path $template) { 
     Copy-Item $template $paths.FEATURE_DESIGN -Force
